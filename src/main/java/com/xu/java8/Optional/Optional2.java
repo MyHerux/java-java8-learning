@@ -1,10 +1,14 @@
-package com.xu.java8.stream;
+package com.xu.java8.Optional;
 
 import java.util.Optional;
 import java.util.function.Supplier;
 
 /**
- * Created by xu on 2016/8/31.
+ * Class java8-Optional类:解决空引用的问题
+ *
+ * @author hua xu
+ * @version 1.0.0
+ * @date 16/08/31
  */
 public class Optional2 {
     static class Outer {
@@ -61,7 +65,7 @@ public class Optional2 {
     }
 
     private static void test1() {
-        Optional<Outer> optional=Optional.of(new Outer());
+        Optional<Outer> optional = Optional.of(new Outer());
         optional.flatMap(o -> Optional.ofNullable(o.nested))
                 .flatMap(n -> Optional.ofNullable(n.inner))
                 .flatMap(i -> Optional.ofNullable(i.foo))
