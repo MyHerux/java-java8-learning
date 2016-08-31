@@ -35,6 +35,8 @@ public class InterfaceT {
         System.out.println(formula1.sqrt(-23));
         System.out.println(Formula.positive(-4));
 
+        /**Lambda表达式不能使用默认方法，无法编译*/
+        //Formula formula = (a) -> sqrt( a * 100);
     }
 }
 
