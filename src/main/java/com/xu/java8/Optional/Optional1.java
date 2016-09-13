@@ -33,6 +33,8 @@ public class Optional1 {
         System.out.println(optional.orElse("fallback"));
         optional.ifPresent(System.out::println);
         optional2.ifPresent(System.out::println);
+
+        System.out.println(Optional.ofNullable(null).isPresent());
     }
 }
 
