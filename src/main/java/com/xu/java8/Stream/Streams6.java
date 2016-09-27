@@ -1,8 +1,8 @@
 package com.xu.java8.Stream;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import net.sf.json.JSONObject;
+
+import java.util.*;
 
 /**
  * Created by xu on 2016/9/13.
@@ -22,6 +22,53 @@ public class Streams6 {
         unsortMap.put("m", 2);
         unsortMap.put("f", 9);
         System.out.println(sortByValue(unsortMap));
+
+        /**
+         * 对list里面的json处理
+         */
+        List<Object> list = new ArrayList<>();
+        JSONObject data1 = new JSONObject();
+        data1.put("type", "支出");
+        data1.put("money", 500);
+        JSONObject data2 = new JSONObject();
+        data2.put("type", "收入");
+        data2.put("money", 1000);
+        JSONObject data3 = new JSONObject();
+        data3.put("type", "借贷");
+        data3.put("money", 100);
+        list.add(data1);
+        list.add(data2);
+        list.add(data3);
+        /**
+         * 按money的值来排列json
+         */
+        list.stream()
+                .filter(x -> JSONObject.fromObject(x).containsKey("money"))
+                .sorted((b, a) -> Integer.valueOf(JSONObject.fromObject(a).getInt("money")).compareTo(JSONObject.fromObject(b)
+                        .getInt("money")))
+                .forEach(System.out::println);
+        /**
+         * 找到最小的money
+         */
+        Integer min=list.stream()
+                .filter(x -> JSONObject.fromObject(x).containsKey("money"))
+                .map(x->JSONObject.fromObject(x).getInt("money"))
+                .sorted()
+                .findFirst()
+                .get();
+        System.out.println(min);
+        /**
+         * 计算type的数目
+         */
+        Map<String, Integer> type_count = new HashMap<>();
+        list.stream()
+                .filter(x -> JSONObject.fromObject(x).containsKey("type"))
+                .map(x -> JSONObject.fromObject(x).getString("type"))
+                .forEach(x -> {
+                    if (type_count.containsKey(x)) type_count.put(x.toString(), type_count.get(x) + 1);
+                    else type_count.put(x.toString(), 1);
+                });
+        System.out.println(type_count.toString());
     }
 
     /**
