@@ -14,3 +14,7 @@ Java8 Learning (java8学习) <br>
 - java8-Optional类
 
 [Optional类的一些基本用法](https://github.com/MyHerux/java-java8-learning/blob/master/src/main/java/com/xu/java8/Optional/Optional.md)
+
+- java8-Lambda表达式
+
+[Lambda表达式的一些基本用法](https://github.com/MyHerux/java-java8-learning/blob/master/src/main/java/com/xu/java8/lambda/Lambda.md)
