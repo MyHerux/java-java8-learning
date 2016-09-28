@@ -16,11 +16,14 @@ public class Optional1 {
 
         /**创建一个空Optional对象*/
         Optional<String> optional = Optional.empty();
+        System.out.println(optional);
 
         /**创建Optional对象有一个非空值*/
         Person person = new Person("xu","hua");
         Optional<Person> optional2 = Optional.of(person);//如果person是null，将会立即抛出，而不是访问person的属性时获得一个潜在的错误
         System.out.println(optional2);
+        System.out.println(optional2.get());
+        System.out.println(optional2.get().firstName);
 
         /**判断对象是否存在*/
         System.out.println(optional.isPresent());
