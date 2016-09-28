@@ -10,3 +10,6 @@ Java8 Learning (java8学习) <br>
         ├── com.xu.java8.lambda	    // Lambda表达式
 	    ├── com.xu.java8.Optional	// java8-Optional类
 	    ├── com.xu.java8.Stream	    // java8-Stream接口
+	    
+- java8-Optional类
+[Optional类的一些基本用法](https://github.com/MyHerux/java-java8-learning/blob/master/src/main/java/com/xu/java8/Optional/Optional.md)

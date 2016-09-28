@@ -65,8 +65,8 @@ public class Streams6 {
                 .filter(x -> JSONObject.fromObject(x).containsKey("type"))
                 .map(x -> JSONObject.fromObject(x).getString("type"))
                 .forEach(x -> {
-                    if (type_count.containsKey(x)) type_count.put(x.toString(), type_count.get(x) + 1);
-                    else type_count.put(x.toString(), 1);
+                    if (type_count.containsKey(x)) type_count.put(x, type_count.get(x) + 1);
+                    else type_count.put(x, 1);
                 });
         System.out.println(type_count.toString());
     }
