@@ -1,5 +1,5 @@
 ##Lambda表达式
-- ###Lambda表达式的使用
+- ### Lambda表达式的使用
 
 java8以前的字符串排列，创建一个匿名的比较器对象Comparator然后将其传递给sort方法
 ```
@@ -33,7 +33,7 @@ names2.sort(Comparator.nullsLast(String::compareTo));
 System.out.println(names2);
 ##:[anna, mike, peter, xenia, null]
 ```
-- ###函数式接口,方法，构造器
+- ### 函数式接口,方法，构造器
 
 每一个lambda表达式都对应一个类型，通常是接口类型。而“函数式接口”是指仅仅只包含一个抽象方法的接口，
 每一个该类型的lambda表达式都会被匹配到这个抽象方法。
@@ -113,7 +113,7 @@ Java编译器会自动根据PersonFactory.create方法的签名来选择合适�
      System.out.println(person.toString());
     ##:xuhua
 ```
-- ###Lambda作用域
+- ### Lambda作用域
 
 在lambda表达式中访问外层作用域和老版本的匿名对象中的方式很相似。
 你可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。
