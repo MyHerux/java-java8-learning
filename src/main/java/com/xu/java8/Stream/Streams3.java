@@ -22,15 +22,11 @@ public class Streams3 {
             values.add(uuid.toString());
         }
 
-        // sequential
-
         long t0 = System.nanoTime();
-
         long count = values.stream().sorted().count();
         System.out.println(count);
 
         long t1 = System.nanoTime();
-
         long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
         System.out.println(String.format("sequential sort took: %d ms", millis));
     }
@@ -42,15 +38,11 @@ public class Streams3 {
             values.add(uuid.toString());
         }
 
-        // sequential
-
         long t0 = System.nanoTime();
-
         long count = values.parallelStream().sorted().count();
         System.out.println(count);
 
         long t1 = System.nanoTime();
-
         long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
         System.out.println(String.format("parallel sort took: %d ms", millis));
     }

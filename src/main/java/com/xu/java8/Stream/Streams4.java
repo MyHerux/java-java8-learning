@@ -24,7 +24,8 @@ public class Streams4 {
                 .forEach(i -> {
                     if (i % 2 == 1) System.out.print(i+" ");
                 });
-
+        System.out.println();
+        System.out.println(IntStream.range(0, 10).sum());
         System.out.println();
         IntStream.range(0, 10)
                 .filter(i -> i % 2 == 1)

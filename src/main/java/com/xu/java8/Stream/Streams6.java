@@ -50,9 +50,9 @@ public class Streams6 {
         /**
          * 找到最小的money
          */
-        Integer min=list.stream()
+        Integer min = list.stream()
                 .filter(x -> JSONObject.fromObject(x).containsKey("money"))
-                .map(x->JSONObject.fromObject(x).getInt("money"))
+                .map(x -> JSONObject.fromObject(x).getInt("money"))
                 .sorted()
                 .findFirst()
                 .get();
@@ -74,12 +74,11 @@ public class Streams6 {
     /**
      * 使用stream类来对map的value排序(并行排序,逆序)
      */
-    public static <K, V extends Comparable<? super V>> Map<K, V>
-    sortByValue(Map<K, V> map) {
+    public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         Map<K, V> result = new LinkedHashMap<>();
-        map.entrySet().parallelStream().sorted((o1, o2) -> (o2.getValue()).compareTo(o1.getValue())).forEachOrdered(x ->
-                result.put(x.getKey(), x
-                        .getValue()));
+        map.entrySet().parallelStream()
+                .sorted((o1, o2) -> (o2.getValue()).compareTo(o1.getValue()))
+                .forEachOrdered(x -> result.put(x.getKey(), x.getValue()));
         return result;
     }
 }
