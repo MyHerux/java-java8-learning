@@ -63,7 +63,7 @@ public class Lambda2 {
 
         /**简写的lambda表达式:constructor*/
         PersonFactory<Person> personFactory = Person::new;
-        Person person = personFactory.create("Peter", "Parker");//Java编译器会自动根据PersonFactory.create方法的签名来选择合适的构造函数。
+        Person person = personFactory.create("xu", "hua");//Java编译器会自动根据PersonFactory.create方法的签名来选择合适的构造函数。
         System.out.println(person.toString());
     }
 }

@@ -12,7 +12,7 @@ public class Lambda4 {
      * 在lambda表达式中访问外层作用域和老版本的匿名对象中的方式很相似。
      * 你可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。
      */
-    static int outerStaticNum;
+    static int outerStaticNum = 10;
 
     int outerNum;
 
@@ -23,7 +23,7 @@ public class Lambda4 {
 
         /**可以直接在lambda表达式中访问外层的局部变量*/
         Lambda2.Converter<Integer, String> stringConverter =
-                (from) -> String.valueOf(from + num);
+                (from) -> String.valueOf(from + outerStaticNum+num);
         String convert = stringConverter.convert(2);
         System.out.println(convert);    // 3
         /**但是num必须不可被后面的代码修改（即隐性的具有final的语义），否则编译出错*/
@@ -35,9 +35,9 @@ public class Lambda4 {
             return String.valueOf(from + outerNum);
         };
         System.out.println(stringConverter2.convert(2));
-        System.out.println("\nBefore:outerNum-->"+outerNum);
-        outerNum=15;
-        System.out.println("After:outerNum-->"+outerNum);
+        System.out.println("\nBefore:outerNum-->" + outerNum);
+        outerNum = 15;
+        System.out.println("After:outerNum-->" + outerNum);
 
         String[] array = new String[1];
         Lambda2.Converter<Integer, String> stringConverter3 = (from) -> {
@@ -45,9 +45,9 @@ public class Lambda4 {
             return String.valueOf(from);
         };
         stringConverter3.convert(23);
-        System.out.println("\nBefore:array[0]-->"+array[0]);
+        System.out.println("\nBefore:array[0]-->" + array[0]);
         array[0] = "Hi there";
-        System.out.println("After:array[0]-->"+array[0]);
+        System.out.println("After:array[0]-->" + array[0]);
     }
 
     public static void main(String[] args) {
