@@ -18,3 +18,7 @@ Java8 Learning (java8学习) <br>
 - java8-Lambda表达式
 
 [Lambda表达式的一些基本用法](https://github.com/MyHerux/java-java8-learning/blob/master/src/main/java/com/xu/java8/lambda/Lambda.md)
+
+- java8-Stream接口
+
+[Stream接口的一些基本用法](https://github.com/MyHerux/java-java8-learning/blob/master/src/main/java/com/xu/java8/Stream/Stream.md)
