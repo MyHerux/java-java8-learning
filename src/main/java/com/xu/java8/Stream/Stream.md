@@ -259,19 +259,22 @@
          */
         list.stream()
                 .filter(x -> JSONObject.fromObject(x).containsKey("money"))
-                .sorted((b, a) -> Integer.valueOf(JSONObject.fromObject(a).getInt("money")).compareTo(JSONObject.fromObject(b)
-                        .getInt("money")))
+                .sorted((b, a) -> Integer.valueOf(JSONObject.fromObject(a)
+                                .getInt("money"))
+                                .compareTo(JSONObject.fromObject(b)
+                                .getInt("money")))
                 .forEach(System.out::println);
+
         /**
          * 找到最小的money
          */
         Integer min = list.stream()
-                .filter(x -> JSONObject.fromObject(x).containsKey("money"))
-                .map(x -> JSONObject.fromObject(x).getInt("money"))
-                .sorted()
-                .findFirst()
-                .get();
+                        .filter(x -> JSONObject.fromObject(x).containsKey("money"))
+                        .mapToInt(x -> JSONObject.fromObject(x).getInt("money"))
+                        .min()
+                        .getAsInt();
         System.out.println(min);
+
         /**
          * 计算type的数目
          */
