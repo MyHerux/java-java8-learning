@@ -62,6 +62,8 @@ public class Lambda2 {
         System.out.println(converted4);    // result J
 
         /**简写的lambda表达式:constructor*/
+        Person p=new Person("xu","hua");
+        Person p2=new Person("xu","hua","");
         PersonFactory<Person> personFactory = Person::new;
         Person person = personFactory.create("xu", "hua");//Java编译器会自动根据PersonFactory.create方法的签名来选择合适的构造函数。
         System.out.println(person.toString());
