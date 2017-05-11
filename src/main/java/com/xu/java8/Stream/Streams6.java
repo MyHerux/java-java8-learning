@@ -52,10 +52,9 @@ public class Streams6 {
          */
         Integer min = list.stream()
                 .filter(x -> JSONObject.fromObject(x).containsKey("money"))
-                .map(x -> JSONObject.fromObject(x).getInt("money"))
-                .sorted()
-                .findFirst()
-                .get();
+                .mapToInt(x -> JSONObject.fromObject(x).getInt("money"))
+                .min()
+                .getAsInt();
         System.out.println(min);
         /**
          * 计算type的数目
