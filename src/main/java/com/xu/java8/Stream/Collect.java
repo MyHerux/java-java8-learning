@@ -37,6 +37,7 @@ public class Collect {
                 .collect(Collectors.partitioningBy(startA));
         System.out.println(map2);
 
+
         Predicate<String> end1 = x -> x.endsWith("1");
         Map<Boolean, Map<Boolean, List<String>>> map3 = stringCollection.stream()
                 .collect(Collectors.partitioningBy(startA, Collectors.partitioningBy(end1)));
