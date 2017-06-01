@@ -1,7 +1,10 @@
 package com.xu.java8.Stream;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.*;
 import java.util.stream.Collectors;
 
@@ -36,7 +39,6 @@ public class Collect {
         Map<Boolean, List<String>> map2 = stringCollection.stream()
                 .collect(Collectors.partitioningBy(startA));
         System.out.println(map2);
-
 
         Predicate<String> end1 = x -> x.endsWith("1");
         Map<Boolean, Map<Boolean, List<String>>> map3 = stringCollection.stream()
@@ -79,6 +81,8 @@ public class Collect {
         BiFunction<Person, Person, Person> biFunction = (x, y) -> new Person(x.getAge() + y.getAge(), x.getRate() + y.getRate());
         BinaryOperator<Person> binaryOperator1 = (x, y) -> new Person(x.getAge() + y.getAge(), x.getRate() + y.getRate());
         Person total = personList.parallelStream().reduce(new Person(0, 0), biFunction, binaryOperator1);
-        System.out.println("total:"+total);
+        System.out.println("total:" + total);
+
+
     }
 }

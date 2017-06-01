@@ -6,7 +6,7 @@
 Java8 Learning (java8学习) <br>
 
 - 包目录：
-  
+        ├── com.xu.java8.Function   // Function接口
         ├── com.xu.java8.lambda	    // Lambda表达式
 	    ├── com.xu.java8.Optional	// java8-Optional类
 	    ├── com.xu.java8.Stream	    // java8-Stream接口
