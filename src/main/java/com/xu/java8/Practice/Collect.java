@@ -1,5 +1,7 @@
-package com.xu.java8.Stream;
+package com.xu.java8.Practice;
 
+
+import com.xu.java8.Stream.Person;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
